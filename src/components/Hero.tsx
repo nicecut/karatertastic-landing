@@ -1,7 +1,16 @@
 
 import { Button } from "@/components/ui/button";
+import { XCircle } from "lucide-react";
 
 export const Hero = () => {
+  const painPoints = [
+    "Frustrert over lave karakterer til tross for mange timer med studier?",
+    "Sliter med å uttrykke deg tydelig på norsk?",
+    "Bekymret for din akademiske fremtid?",
+    "Føler deg utenfor i klasseromsdiskusjoner?",
+    "Stresser over kommende norskeksamener?"
+  ];
+
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-secondary py-20 px-4">
       <div
@@ -14,18 +23,28 @@ export const Hero = () => {
         <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
           Velkommen til KarakterKick
         </span>
-        <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
-          Styrk dine norskferdigheter med{" "}
-          <span className="text-primary">KarakterKick!</span>
+        <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+          Er dårlig norsk til hinder for karakterene dine - og{" "}
+          <span className="text-primary">fremtiden din?</span>
         </h1>
-        <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-          Et digitalt lese- og skrivekurs for ungdom med norsk som andrespråk
+        <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-12">
+          Oppdag hvordan andre elever med et annet morsmål gikk fra å slite med norsk til å mestre det på bare 4 måneder...
         </p>
+        <div className="max-w-xl mx-auto mb-12">
+          <ul className="space-y-4 text-left">
+            {painPoints.map((point, index) => (
+              <li key={index} className="flex items-center text-gray-600">
+                <XCircle className="h-5 w-5 text-red-500 mr-3 flex-shrink-0" />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
         <Button 
           size="lg"
           className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg rounded-full animate-fade-in"
         >
-          Meld deg på nå!
+          Sikre plassen din nå - 50% rabatt
         </Button>
       </div>
     </section>
